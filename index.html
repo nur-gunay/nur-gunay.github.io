@@ -10,6 +10,11 @@
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 110px;
+    }
+
     body {
       margin: 0;
       background: #eee8ff;
@@ -17,10 +22,41 @@
       font-family: Arial, sans-serif;
     }
 
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: #eee8ff;
+      border-bottom: 1px solid #d4c9ec;
+    }
+
+    nav {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px 24px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px 28px;
+    }
+
+    nav a {
+      color: #292724;
+      text-decoration: none;
+      font-size: 17px;
+      font-weight: bold;
+      padding: 8px 0;
+    }
+
+    nav a:hover {
+      color: #7054b3;
+      text-decoration: underline;
+    }
+
     main {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 80px 24px;
+      padding: 60px 24px;
     }
 
     .profile-layout {
@@ -46,8 +82,8 @@
     }
 
     h2 {
-      font-size: 26px;
-      margin: 0 0 16px;
+      font-size: 32px;
+      margin: 0 0 20px;
     }
 
     p {
@@ -70,18 +106,41 @@
       background: #49434f;
     }
 
-    .button:focus-visible {
+    a:focus-visible {
       outline: 3px solid #7054b3;
       outline-offset: 4px;
     }
 
-    section {
+    .linkedin {
       margin-top: 36px;
     }
 
+    .linkedin h2 {
+      font-size: 26px;
+    }
+
+    .content-section {
+      margin-top: 80px;
+      padding-top: 40px;
+      border-top: 1px solid #d4c9ec;
+    }
+
     @media (max-width: 700px) {
+      html {
+        scroll-padding-top: 160px;
+      }
+
+      nav {
+        gap: 8px 20px;
+        padding: 12px 16px;
+      }
+
+      nav a {
+        font-size: 15px;
+      }
+
       main {
-        padding: 40px 24px;
+        padding: 32px 24px;
       }
 
       .profile-layout {
@@ -99,59 +158,94 @@
         font-size: 18px;
       }
     }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+    }
   </style>
 </head>
 
 <body>
+  <header>
+    <nav aria-label="Ana menü">
+      <a href="#tanitim">Tanıtım</a>
+      <a href="#tiyatro">Tiyatro Gösterileri</a>
+      <a href="#dersler">Dersler</a>
+      <a href="#televizyon">Televizyon Programları</a>
+    </nav>
+  </header>
+
   <main>
-    <div class="profile-layout">
+    <section id="tanitim" aria-labelledby="tanitim-baslik">
+      <div class="profile-layout">
+        <div class="profile-picture">
+          <img
+            src="WhatsApp Image 2026-10-02 at 18.00.53.jpeg"
+            alt="Nur Günay"
+          >
+        </div>
 
-      <div class="profile-picture">
-        <img
-          src="WhatsApp Image 2026-10-02 at 18.00.53.jpeg"
-          alt="Nur Günay"
-        >
-      </div>
-
-      <div class="profile-text">
-        <h1>Nur Günay</h1>
-
-        <p>
-          Web siteme hoş geldiniz. 2009’dan beri tiyatro
-          gösterileri, drama dersleri, kamera önü oyunculuk
-          dersleri, diksiyon dersleri ve çok daha fazlasıyla
-          sizlerleyim.
-        </p>
-
-        <p>
-          Burada çalışmalarıma dair portfolyomu, tiyatro
-          gösterilerimi ve özgeçmişimi görebilirsiniz.
-        </p>
-
-        <a class="button" href="mailto:nurgunay.iletisim@gmail.com">
-          İletişim için
-        </a>
-
-        <section>
-          <h2>LinkedIn</h2>
+        <div class="profile-text">
+          <h1 id="tanitim-baslik">Nur Günay</h1>
 
           <p>
-            Deneyimlerim ve çalışmalarım hakkında daha fazla
-            bilgi edinin.
+            Web siteme hoş geldiniz. 2009’dan beri tiyatro
+            gösterileri, drama dersleri, kamera önü oyunculuk
+            dersleri, diksiyon dersleri ve çok daha fazlasıyla
+            sizlerleyim.
           </p>
 
-          <a
-            class="button"
-            href="https://www.linkedin.com/in/nur-günay-4405a1105/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            LinkedIn profilimi ziyaret edin
-          </a>
-        </section>
-      </div>
+          <p>
+            Burada çalışmalarıma dair portfolyomu, tiyatro
+            gösterilerimi ve özgeçmişimi görebilirsiniz.
+          </p>
 
-    </div>
+          <a class="button" href="mailto:nurgunay.iletisim@gmail.com">
+            İletişim için
+          </a>
+
+          <div class="linkedin">
+            <h2>LinkedIn</h2>
+            <p>
+              Deneyimlerim ve çalışmalarım hakkında daha fazla
+              bilgi edinin.
+            </p>
+
+            <a
+              class="button"
+              href="https://www.linkedin.com/in/nur-günay-4405a1105/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              LinkedIn profilimi ziyaret edin
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="tiyatro" class="content-section">
+      <h2>Tiyatro Gösterileri</h2>
+      <p>Tiyatro gösterilerime ait bilgiler ve fotoğraflar yakında burada.</p>
+    </section>
+
+    <section id="dersler" class="content-section">
+      <h2>Dersler</h2>
+      <p>
+        Drama, kamera önü oyunculuk ve diksiyon derslerime
+        ilişkin detaylar yakında burada.
+      </p>
+    </section>
+
+    <section id="televizyon" class="content-section">
+      <h2>Televizyon Programları</h2>
+      <p>
+        Katıldığım televizyon programlarına ait bilgiler ve
+        videolar yakında burada.
+      </p>
+    </section>
   </main>
 </body>
 </html>
