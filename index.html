@@ -59,20 +59,23 @@
       padding: 60px 24px;
     }
 
-    .profile-layout {
+    .profile-layout,
+    .theatre-row {
       display: grid;
       grid-template-columns: 1fr 1fr;
       align-items: center;
       gap: 48px;
     }
 
-    .profile-picture img {
+    .profile-picture img,
+    .theatre-photo img {
       display: block;
       width: 100%;
       height: auto;
     }
 
-    .profile-text {
+    .profile-text,
+    .theatre-description {
       min-width: 0;
     }
 
@@ -83,6 +86,11 @@
 
     h2 {
       font-size: 32px;
+      margin: 0 0 20px;
+    }
+
+    h3 {
+      font-size: 28px;
       margin: 0 0 20px;
     }
 
@@ -125,6 +133,19 @@
       border-top: 1px solid #d4c9ec;
     }
 
+    .theatre-row {
+      margin-top: 48px;
+    }
+
+    /* Second theatre photo appears on the right. */
+    .theatre-row.reverse .theatre-photo {
+      order: 2;
+    }
+
+    .theatre-row.reverse .theatre-description {
+      order: 1;
+    }
+
     @media (max-width: 700px) {
       html {
         scroll-padding-top: 160px;
@@ -143,7 +164,8 @@
         padding: 32px 24px;
       }
 
-      .profile-layout {
+      .profile-layout,
+      .theatre-row {
         grid-template-columns: 1fr;
         gap: 32px;
       }
@@ -152,6 +174,12 @@
         width: 100%;
         max-width: 400px;
         margin: 0 auto;
+      }
+
+      /* On phones, photos appear above their descriptions. */
+      .theatre-row.reverse .theatre-photo,
+      .theatre-row.reverse .theatre-description {
+        order: initial;
       }
 
       p {
@@ -208,6 +236,7 @@
 
           <div class="linkedin">
             <h2>LinkedIn</h2>
+
             <p>
               Deneyimlerim ve çalışmalarım hakkında daha fazla
               bilgi edinin.
@@ -228,7 +257,60 @@
 
     <section id="tiyatro" class="content-section">
       <h2>Tiyatro Gösterileri</h2>
-      <p>Tiyatro gösterilerime ait bilgiler ve fotoğraflar yakında burada.</p>
+
+      <!-- First show: photo left, description right -->
+      <div class="theatre-row">
+        <div class="theatre-photo">
+          <img
+            src="tiyatro-1.jpg"
+            alt="Birinci tiyatro gösterisinden bir kare"
+            loading="lazy"
+          >
+        </div>
+
+        <div class="theatre-description">
+          <h3>Birinci Gösterinin Adı</h3>
+          <p>
+            Bu gösterinin açıklamasını daha sonra buraya yazabilirsiniz.
+          </p>
+        </div>
+      </div>
+
+      <!-- Second show: description left, photo right -->
+      <div class="theatre-row reverse">
+        <div class="theatre-photo">
+          <img
+            src="tiyatro-2.jpg"
+            alt="İkinci tiyatro gösterisinden bir kare"
+            loading="lazy"
+          >
+        </div>
+
+        <div class="theatre-description">
+          <h3>İkinci Gösterinin Adı</h3>
+          <p>
+            Bu gösterinin açıklamasını daha sonra buraya yazabilirsiniz.
+          </p>
+        </div>
+      </div>
+
+      <!-- Third show: photo left, description right -->
+      <div class="theatre-row">
+        <div class="theatre-photo">
+          <img
+            src="tiyatro-3.jpg"
+            alt="Üçüncü tiyatro gösterisinden bir kare"
+            loading="lazy"
+          >
+        </div>
+
+        <div class="theatre-description">
+          <h3>Üçüncü Gösterinin Adı</h3>
+          <p>
+            Bu gösterinin açıklamasını daha sonra buraya yazabilirsiniz.
+          </p>
+        </div>
+      </div>
     </section>
 
     <section id="dersler" class="content-section">
