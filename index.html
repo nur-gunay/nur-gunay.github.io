@@ -1,10 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Nur Günay</title>
+
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       background: #eee8ff;
@@ -13,51 +18,140 @@
     }
 
     main {
-      max-width: 800px;
+      max-width: 1200px;
       margin: 0 auto;
-      padding: 100px 24px;
+      padding: 80px 24px;
+    }
+
+    .profile-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 48px;
+    }
+
+    .profile-picture img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .profile-text {
+      min-width: 0;
     }
 
     h1 {
-      font-size: clamp(40px, 8vw, 72px);
-      margin-bottom: 20px;
+      font-size: clamp(40px, 6vw, 72px);
+      margin: 0 0 24px;
+    }
+
+    h2 {
+      font-size: 26px;
+      margin: 0 0 16px;
     }
 
     p {
       font-size: 20px;
       line-height: 1.6;
+      margin: 0 0 20px;
     }
 
-    a {
+    .button {
       display: inline-block;
-      margin-top: 24px;
       padding: 14px 24px;
       background: #292724;
       color: white;
       text-decoration: none;
       border-radius: 8px;
+      line-height: 1.5;
+    }
+
+    .button:hover {
+      background: #49434f;
+    }
+
+    .button:focus-visible {
+      outline: 3px solid #7054b3;
+      outline-offset: 4px;
+    }
+
+    section {
+      margin-top: 36px;
+    }
+
+    @media (max-width: 700px) {
+      main {
+        padding: 40px 24px;
+      }
+
+      .profile-layout {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .profile-picture {
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+      }
+
+      p {
+        font-size: 18px;
+      }
     }
   </style>
 </head>
+
 <body>
   <main>
-    <img src="WhatsApp Image 2026-10-02 at 18.00.53.jpeg" alt="Nur Günay"
-     style="width:180px; height:240px; object-fit:cover;">
-    <h1>Nur Günay</h1>
-    <p> Website'me hoşgeldiniz. 2009'dan beri tiyatro gösterileri, drama dersleri, kamera önü oyunculuk dersleri, diksiyon dersleri ve çok daha fazlasıyla sizlerleyim.</p>
-    <p> Burada çalışmalarıma dair portfolyomu, tiyatro gösterilerimi ve özgeçmişimi görebilirsiniz.</p>
-    <a href="mailto:nurgunay.iletisim@gmail.com">İletişim için</a>
-    <section>
-  <h2>LinkedIn</h2>
-  <p>Deneyimlerim ve çalışmalarım hakkında daha fazla bilgi edinin.</p>
-  <a href="https://www.linkedin.com/in/nur-günay-4405a1105/"
-     target="_blank"
-     rel="noopener noreferrer">
-    LinkedIn profilimi ziyaret edin.
-  </a>
-    </section>
+    <div class="profile-layout">
+
+      <div class="profile-picture">
+        <img
+          src="WhatsApp Image 2026-10-02 at 18.00.53.jpeg"
+          alt="Nur Günay"
+        >
+      </div>
+
+      <div class="profile-text">
+        <h1>Nur Günay</h1>
+
+        <p>
+          Web siteme hoş geldiniz. 2009’dan beri tiyatro
+          gösterileri, drama dersleri, kamera önü oyunculuk
+          dersleri, diksiyon dersleri ve çok daha fazlasıyla
+          sizlerleyim.
+        </p>
+
+        <p>
+          Burada çalışmalarıma dair portfolyomu, tiyatro
+          gösterilerimi ve özgeçmişimi görebilirsiniz.
+        </p>
+
+        <a class="button" href="mailto:nurgunay.iletisim@gmail.com">
+          İletişim için
+        </a>
+
+        <section>
+          <h2>LinkedIn</h2>
+
+          <p>
+            Deneyimlerim ve çalışmalarım hakkında daha fazla
+            bilgi edinin.
+          </p>
+
+          <a
+            class="button"
+            href="https://www.linkedin.com/in/nur-günay-4405a1105/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            LinkedIn profilimi ziyaret edin
+          </a>
+        </section>
+      </div>
+
+    </div>
   </main>
-  
-  
 </body>
 </html>
